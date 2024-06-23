@@ -20,24 +20,6 @@ export default function Header() {
               className={style.logo_image}
             />
           </Link>
-          {/* <div className={style.dropDown_right_parent}>
-            <div className={style.dropDown_right}>
-              <FaInstagram className={style.instagram_icon} />
-              کیت رابط کاربری اینستاگرام
-              <IoIosArrowDown />
-            </div>
-            <ul className={style.ul_dropDown}>
-              <li>
-                <InstagramKitBox />
-              </li>
-              <li>
-                <InstagramKitBox />
-              </li>
-              <li>
-                <InstagramKitBox />
-              </li>
-            </ul>
-          </div> */}
         </div>
         <div className={style.left}>
           <div>
