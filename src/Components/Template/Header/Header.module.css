@@ -1,0 +1,129 @@
+.parent{
+    width: 100%;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-header);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.items_parent{
+    width: 90%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+.right{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.dropDown_right_parent{
+    height: 100%;
+    padding: 10px 7px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 10px;
+    position: relative;
+}
+.dropDown_right_parent:hover{
+    background-color: var(--hover-color);
+}
+.dropDown_right_parent:hover .ul_dropDown{
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+}
+.instagram_icon{
+    font-size: 25px;
+    margin-left: 4px;
+}
+.ul_dropDown{
+    background-color: var(--bg-menu);
+    box-shadow: 0 25px 100px rgba(255, 255, 255, 0.05);
+    list-style: none;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top:95%;
+    right: -50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+.ul_dropDown::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--bg-menu) transparent;
+}
+
+
+.left{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.login_parent{
+    padding: 5px 20px;
+    height: 100%;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+.login_parent:hover{
+    background-color: var(--hover-color);
+}
+/* toggle start */
+.checkboxInput {
+    display: none;
+  }
+  
+  .toggleSwitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60px;
+    height: 20px;
+    background-color: rgb(199, 199, 199);
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: .3s;
+  }
+  
+  .toggleSwitch::after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    background: conic-gradient(rgb(104, 104, 104),white,rgb(104, 104, 104),white,rgb(104, 104, 104));
+    border-radius: 50%;
+    transition-duration: .3s;
+    box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.308);
+  }
+  
+  .checkboxInput:checked+.toggleSwitch::after {
+    transform: translateX(100%);
+    transition-duration: .3s;
+  }
+  /* Switch background change */
+  .checkboxInput:checked+.toggleSwitch {
+    background-color: rgb(153, 197, 151);
+    transition-duration: .3s;
+  }
+/* toggle finish */

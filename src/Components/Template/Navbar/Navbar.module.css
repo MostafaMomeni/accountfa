@@ -1,0 +1,108 @@
+.parent {
+  width: 100%;
+  background-color: var(--bg-navBar);
+  padding-top: 5px;
+}
+.parent > div {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+.ul {
+  list-style: none;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+.ul > li {
+  font-size: 16px;
+  padding: 17px 20px;
+  text-align: center;
+  transition: 0.2s;
+  border-top: 2px solid var(--bg-navBar);
+  margin: 2px 0;
+  position: relative;
+}
+.ul > li:hover {
+  border-top: 2px solid var(--bg-icons);
+  background-color: var(--hover-color);
+}
+.ul>li:hover .sub_ul{
+    visibility: visible;
+    opacity: 1;
+  transform: translateY(0);
+}
+.icon {
+  color: var(--bg-icons);
+  margin-left: 5px;
+  font-size: 18px;
+}
+.sub_ul {
+  list-style: none;
+  position: absolute;
+  top: 55px;
+  right: 0%;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 6px 12px;
+  border-radius: 5px;
+  background-color: var(--bg-navBar);
+  z-index: 50;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  transform: translateY(-20px);
+  min-width: 200px;
+}
+.sub_ul > li {
+  padding: 10px 20px;
+  transition: 0.2s;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+}
+.sub_ul > li:hover {
+  background-color: var(--hover-icons);
+}
+.sub_ul>li:hover .sub_sub_ul{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.sub_icon{
+    color: var(--text-color);
+    font-size: 14px;
+}
+.sub_sub_ul{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 6px 12px;
+    border-radius: 5px;
+    background-color: var(--bg-navBar);
+    z-index: 50;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    transform: translateX(20px);
+    min-width: 200px;   
+}
+.sub_sub_ul > li {
+    padding: 10px 20px;
+    transition: 0.2s;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+  }
+  .sub_sub_ul > li:hover {
+    background-color: var(--hover-icons);
+  }
