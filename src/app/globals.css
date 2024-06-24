@@ -24,3 +24,54 @@ body{
   background-color: var(--bg-base);
   color: var(--text-color);
 }
+.text-color{
+  color: var(--text-color);
+}
+.input-form{
+  background-color: inherit;
+  border: 1px solid var(--hover-color);
+  padding: 7px;
+  border-radius: 5px;
+  margin: 10px 0;
+  color: var(--text-color);
+  transition: 0.2s;
+  outline: none;
+  border-bottom: 1px solid var(--hover-color);
+  width: 100%;
+}
+.input-form:focus{
+  border-bottom: 1px solid var(--bg-icons);
+}
+.input-form-parent{
+  position: relative;
+  display: inline-block;
+}
+.label-form{
+  position: absolute;
+  color: var(--text-color);
+  top: 13px;
+  right: 10px;
+  transition: 0.2s;
+  padding: 0;
+}
+.input-form-parent:has( .input-form:focus) .label-form , .input-form-parent:has(.input-form:valid) .label-form {
+  top: -8px;
+  background-color: var(--bg-menu);
+}
+
+/* start modal css */
+.modal-icon{
+  font-size: 18px;
+  margin-left: 5px;
+}
+.modal-title{
+  background-image: linear-gradient(to right,#452350 0,#8d46a5 100%);
+  color: var(--text-color);
+  text-align: right;
+  padding: 15px;
+}
+.modal-body{
+  background-color: var(--bg-base);
+  min-width: 60%;
+}
+/* finish modal css */

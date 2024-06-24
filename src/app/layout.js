@@ -4,6 +4,7 @@ import Header from "@/Components/Template/Header/Header";
 import "bootstrap/dist/css/bootstrap.css";
 import { Container } from "react-bootstrap";
 import Navbar from "@/Components/Template/Navbar/Navbar";
+import Footer from "@/Components/Template/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <Header />
           <Navbar />
           {children}
+          <Footer/>
         </div>
       </body>
     </html>

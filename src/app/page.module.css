@@ -1,0 +1,31 @@
+.parent{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.title_box_parent{
+    width: 100%;
+    margin-top: 20px;
+    padding: 25px 20px;
+    font-size: 24px;
+    border-radius: 25px 25px 2px 2px;
+    display: flex;
+    align-items: center;
+    background-image: url(../../public/Assets/titleBox-bg.svg);
+    background-attachment: fixed;
+}
+.title_box_parent>p{
+    margin-bottom: 0;
+}
+.card_parent{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+@media(min-width:1600px){
+    .parent{
+        width: 70%;
+    }
+
+}

@@ -1,0 +1,10 @@
+.parent{
+    margin-top: 20px;
+    border-top: 1px solid var(--hover-color);
+    padding: 15px;
+    text-align: center;
+}
+.link{
+    color: var(--bg-icons);
+    text-decoration: none;
+}
