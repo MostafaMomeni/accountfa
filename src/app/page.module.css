@@ -27,5 +27,14 @@
     .parent{
         width: 70%;
     }
-
+}
+@media(max-width:700px){
+    .parent{
+        width: 95%;
+    }
+}
+@media(max-width:650px){
+    .parent{
+        margin-top: 90px;
+    }
 }

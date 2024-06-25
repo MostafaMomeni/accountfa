@@ -16,13 +16,13 @@
   --bg-menu:#232f3e;
   --bg-icons:#9b4bb6;
   --bg-header:#1c2938;
-  --hover-color:#3b4a5d;
   --hover-icons:#6a2f7e;
 }
 body{
   direction: rtl;
   background-color: var(--bg-base);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 .text-color{
   color: var(--text-color);

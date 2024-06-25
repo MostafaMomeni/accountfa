@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Template/Header/Header";
 import "bootstrap/dist/css/bootstrap.css";
-import { Container } from "react-bootstrap";
+import { Container, ThemeProvider } from "react-bootstrap";
 import Navbar from "@/Components/Template/Navbar/Navbar";
 import Footer from "@/Components/Template/Footer/Footer";
 
@@ -18,10 +18,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div style={{ marginTop: "65px" }}>
+          <ThemeProvider dir="rtl">
           <Header />
           <Navbar />
           {children}
           <Footer/>
+          </ThemeProvider>
         </div>
       </body>
     </html>

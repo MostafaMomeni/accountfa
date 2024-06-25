@@ -27,55 +27,6 @@
     align-items: center;
     height: 100%;
 }
-.dropDown_right_parent{
-    height: 100%;
-    padding: 10px 7px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-right: 10px;
-    position: relative;
-}
-.dropDown_right_parent:hover{
-    background-color: var(--hover-color);
-}
-.dropDown_right_parent:hover .ul_dropDown{
-    visibility: visible;
-    opacity: 1;
-    z-index: 10;
-}
-.instagram_icon{
-    font-size: 25px;
-    margin-left: 4px;
-}
-.ul_dropDown{
-    background-color: var(--bg-menu);
-    box-shadow: 0 25px 100px rgba(255, 255, 255, 0.05);
-    list-style: none;
-    padding: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    top:95%;
-    right: -50%;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s;
-}
-.ul_dropDown::before{
-    content: '';
-    position: absolute;
-    top: -10px;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent var(--bg-menu) transparent;
-}
-
-
 .left{
     display: flex;
     align-items: center;
@@ -133,3 +84,82 @@
     transition-duration: .3s;
   }
 /* toggle finish */
+
+/* menu toggle start */
+.checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(176, 92, 255);
+    border-radius: 4px;
+  }
+  
+  .bar2 {
+    transition-duration: .8s;
+  }
+  
+  .bar1,.bar3 {
+    width: 70%;
+  }
+  
+  .checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  .checkbox:checked + .toggle .bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  .checkbox:checked + .toggle .bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  .checkbox:checked + .toggle .bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  .checkbox:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+/* menu toggle finish */
+@media(max-width:650px){
+    .logo_image{
+        width: 40px;
+        height: 40px;
+    }
+    .toggleSwitch{
+        width: 40px;
+        height: 10px;
+    }
+    .toggleSwitch::after{
+        width: 20px;
+        height: 20px;
+    }
+    .login_parent{
+        font-size: 16px;
+        padding: 5px 15px;
+    }
+}

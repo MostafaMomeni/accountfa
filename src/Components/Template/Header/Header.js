@@ -1,16 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { PiWarningCircleLight } from "react-icons/pi";
 import Login from "@/Components/Module/Forms/Login/Login";
 import Swal from "sweetalert2";
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from "sweetalert2-react-content";
+import PhoneMenu from "../PhoneMenu/PhoneMenu";
 
 export default function Header() {
-  const [isShowModal, setIsShowModal] = useState(false);
-  const MySwal = withReactContent(Swal)
+  const [width, setWidth] = useState(window.innerWidth);
+  const [isShowMenu, setIsShowMenu] = useState(false);
+  const MySwal = withReactContent(Swal);
+
+  useEffect(() => {
+    const reSize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", reSize);
+  }, []);
 
   return (
     <>
@@ -19,12 +28,25 @@ export default function Header() {
           <div className={style.right}>
             <Link href={"/"} className={style.logo}>
               <Image
-                src={"/Assets/logo.png"}
+                src={width > 650 ? "/Assets/logo.png" : "/Assets/logoMb.png"}
                 width={180}
                 height={30}
                 className={style.logo_image}
               />
             </Link>
+            {width < 767 && (
+              <>
+              <div className="me-3">
+                <input type="checkbox" className={style.checkbox} id="checkbox" value={isShowMenu}
+                onChange={()=> setIsShowMenu(!isShowMenu)} />
+                <label for="checkbox" className={style.toggle}>
+                  <div className={`${style.bars} ${style.bar1}`}></div>
+                  <div className={`${style.bars} ${style.bar2}`}></div>
+                  <div className={`${style.bars} ${style.bar3}`}></div>
+                </label>
+              </div>
+              </>
+            )}
           </div>
           <div className={style.left}>
             <div>
@@ -41,12 +63,12 @@ export default function Header() {
                 MySwal.fire({
                   title: "ورود کاربران",
                   showCloseButton: true,
-                  showConfirmButton:false,
+                  showConfirmButton: false,
                   customClass: {
                     title: "modal-title",
                     popup: "modal-body",
                   },
-                  html: 
+                  html: (
                     <div className="p-4">
                       <p className="text-color">
                         <PiWarningCircleLight className={"modal-icon"} />
@@ -65,9 +87,9 @@ export default function Header() {
                         رایگان پنل طلایی دریافت کنند.
                       </p>
 
-                      <Login closeModal={setIsShowModal} />
+                      <Login />
                     </div>
-                  ,
+                  ),
                 })
               }
             >
@@ -77,6 +99,9 @@ export default function Header() {
           </div>
         </div>
       </div>
+      {width < 650 && isShowMenu && (
+        <PhoneMenu closeMenu={setIsShowMenu}/>
+      )}
     </>
   );
 }
