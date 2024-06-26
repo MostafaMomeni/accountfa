@@ -183,7 +183,7 @@ export default function Register({ setValue }) {
                 className={style.eyes_icon}
               />
             )}
-            <div className={`input-form-parent`}>
+            <div className={`input-form-parent ${style.passwordInput}`}>
               <input
                 type={typePassword}
                 id="password-input"
@@ -211,7 +211,7 @@ export default function Register({ setValue }) {
                 className={style.eyes_icon}
               />
             )}
-            <div className={`input-form-parent`}>
+            <div className={`input-form-parent ${style.passwordInput}`}>
               <input
                 type={typeRepeatPassword}
                 id="repeat-password-input"
@@ -233,6 +233,7 @@ export default function Register({ setValue }) {
             onChange={(e)=> setBirthday(`${e.year}/${e.month}/${e.day}`)}
             calendarPosition="bottom-left"
             inputClass="input-form"
+            containerClassName={style.birthday_input}
             id="birthday-input"
           />
           <label className="label-form" htmlFor="birthday-input">

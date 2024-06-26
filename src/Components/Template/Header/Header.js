@@ -74,7 +74,7 @@ export default function Header() {
           <div className={style.right}>
             <Link href={"/"} className={style.logo}>
               <Image
-                src={width > 650 ? "/Assets/logo.png" : "/Assets/logoMb.png"}
+                src={width > 650 ? "/Assets/light-logo.png" : "/Assets/logoMb.png"}
                 width={250}
                 height={50}
                 quality={100}
