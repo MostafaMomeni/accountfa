@@ -13,7 +13,7 @@ export default function CardBox(props) {
       >
         <div className={style.icon_parent}>{props.icon}</div>
         <div className={style.text_parent}>
-          <h2>{props.title}</h2>
+          <h2>{props.title} <b>{props.boldTitle}</b> { props.nextBoldTitle}</h2>
           {props.text && <h5>{props.text}</h5>}
         </div>
       </div>

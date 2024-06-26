@@ -7,9 +7,10 @@ import { MdOutlineMessage } from "react-icons/md";
 import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
 
 export default function Navbar() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(1000);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     const reSize = () => {
       setWidth(window.innerWidth);
     };

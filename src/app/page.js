@@ -17,14 +17,14 @@ export default function Home() {
         <p>انواع محصولات دیجیتال کد</p>
       </div>
       <div className={styles.card_parent}>
-        <CardBox icon={<FaApple/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
-        <CardBox icon={<FaApple/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
-        <CardBox icon={<FaApple/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#1e9ea4 " color2="#30d7e0 "/>
-        <CardBox icon={<FaApple/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#f38c00" color2="#e9b964 "/>
-        <CardBox icon={<SlKey/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#00796b " color2="#4db6ac "/>
-        <CardBox icon={<MdOutlineCardGiftcard/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#f80759 " color2="#f46ba5 "/>
-        <CardBox icon={<FaUnlock/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#9b4bb6" color2="#5971fe"/>
-        <CardBox icon={<FaCloud/>} title="اپل‌آیدی فوری" text="(با آیکلود)" color1="#9500ab" color2="#9b4db6 "/>
+        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
+        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
+        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="پلاس" color1="#1e9ea4 " color2="#30d7e0 "/>
+        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="حقیقی" color1="#f38c00" color2="#e9b964 "/>
+        <CardBox icon={<SlKey/>} title="لایسنس" color1="#00796b " color2="#4db6ac "/>
+        <CardBox icon={<MdOutlineCardGiftcard/>} boldTitle="گیفت" nextBoldTitle="کد" color1="#f80759 " color2="#f46ba5 "/>
+        <CardBox icon={<FaUnlock/>} title="آنلاک اپل آیدی" boldTitle="کارتی"  color1="#9b4bb6" color2="#5971fe"/>
+        <CardBox icon={<FaCloud/>} boldTitle="سرویس" nextBoldTitle="رسمی" color1="#9500ab" color2="#9b4db6 "/>
       </div>
     </div>
     </>

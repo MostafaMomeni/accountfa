@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Container, ThemeProvider } from "react-bootstrap";
 import Navbar from "@/Components/Template/Navbar/Navbar";
 import Footer from "@/Components/Template/Footer/Footer";
+import { ContextProvider } from "@/Context/Context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <ContextProvider>
       <body className={inter.className}>
         <div style={{ marginTop: "65px" }}>
           <ThemeProvider dir="rtl">
@@ -26,6 +28,7 @@ export default function RootLayout({ children }) {
           </ThemeProvider>
         </div>
       </body>
+      </ContextProvider>
     </html>
   );
 }

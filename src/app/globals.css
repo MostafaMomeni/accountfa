@@ -20,8 +20,8 @@
 }
 body{
   direction: rtl;
-  background-color: var(--bg-base);
-  color: var(--text-color);
+  background-color: var(--bg-base) !important;
+  color: var(--text-color) !important;
   overflow-x: hidden;
 }
 .text-color{

@@ -1,5 +1,5 @@
 .parent{
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: red;
     border-radius: 7px;
     margin-top: 10px;
@@ -10,7 +10,7 @@
     width: 24%;
 }
 .icon_parent{
-    font-size: 90px;
+    font-size: 80px;
 }
 .text_parent{
     display: flex;
@@ -19,7 +19,8 @@
     margin-top: 30px;
 }
 .text_parent>h2{
-    font-size: 25px;
+    font-size: 21px;
+    word-wrap: unset;
 }
 .text_parent>h5{
     font-size: 20px;

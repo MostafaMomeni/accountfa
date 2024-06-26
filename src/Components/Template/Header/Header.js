@@ -5,21 +5,63 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiWarningCircleLight } from "react-icons/pi";
 import Login from "@/Components/Module/Forms/Login/Login";
+import Register from "@/Components/Module/Forms/Register/Register";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import PhoneMenu from "../PhoneMenu/PhoneMenu";
 
 export default function Header() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(1000);
   const [isShowMenu, setIsShowMenu] = useState(false);
+
+  const[modalValue , setModalValue] = useState("")
+  const[isShowModal , setIsShowModal] = useState(false)
+
   const MySwal = withReactContent(Swal);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     const reSize = () => {
       setWidth(window.innerWidth);
     };
     window.addEventListener("resize", reSize);
   }, []);
+
+ useEffect(()=>{
+    if(isShowModal){
+      MySwal.fire({
+        title: "ورود کاربران",
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+          title: "modal-title",
+          popup: "modal-body",
+        },
+        html: (
+          <div>
+            <p className="text-color" style={{fontSize:"16px"}}>
+              <PiWarningCircleLight className={"modal-icon"} />
+              تمامی خدمات این سایت نیاز به ورود به حساب کاربری
+              می‌باشد.
+            </p>
+            <p className="text-color" style={{fontSize:"16px"}}>
+              <PiWarningCircleLight className={"modal-icon"} />
+              در صورت نداشتن حساب کاربری از منوی ثبت نام اقدام به
+              فعالسازی حساب خود نمائید.
+            </p>
+            <p className="text-color" style={{fontSize:"16px"}}>
+              <PiWarningCircleLight className={"modal-icon"} />
+              همکاران موبایل فروش و همکاران خدمات فنی کامپیوتر
+              می‌توانند با ارسال عکس کارت ویزیت و جواز کسب فروشگاه به
+              رایگان پنل طلایی دریافت کنند.
+            </p>
+            {modalValue === "login" &&  <Login setValue={setModalValue} />}
+            {modalValue === "register" &&  <Register setValue={setModalValue}/>}
+          </div>
+        ),
+      })
+    }
+ },[modalValue])
 
   return (
     <>
@@ -29,15 +71,17 @@ export default function Header() {
             <Link href={"/"} className={style.logo}>
               <Image
                 src={width > 650 ? "/Assets/logo.png" : "/Assets/logoMb.png"}
-                width={180}
-                height={30}
+                width={250}
+                height={50}
+                quality={100}
+                alt="logo"
                 className={style.logo_image}
               />
             </Link>
             {width < 767 && (
               <>
               <div className="me-3">
-                <input type="checkbox" className={style.checkbox} id="checkbox" value={isShowMenu}
+                <input type="checkbox" className={style.checkbox} id="checkbox" checked={isShowMenu}
                 onChange={()=> setIsShowMenu(!isShowMenu)} />
                 <label for="checkbox" className={style.toggle}>
                   <div className={`${style.bars} ${style.bar1}`}></div>
@@ -60,41 +104,14 @@ export default function Header() {
             <div
               className={style.login_parent}
               onClick={() =>
-                MySwal.fire({
-                  title: "ورود کاربران",
-                  showCloseButton: true,
-                  showConfirmButton: false,
-                  customClass: {
-                    title: "modal-title",
-                    popup: "modal-body",
-                  },
-                  html: (
-                    <div className="p-4">
-                      <p className="text-color">
-                        <PiWarningCircleLight className={"modal-icon"} />
-                        تمامی خدمات این سایت نیاز به ورود به حساب کاربری
-                        می‌باشد.
-                      </p>
-                      <p className="text-color">
-                        <PiWarningCircleLight className={"modal-icon"} />
-                        در صورت نداشتن حساب کاربری از منوی ثبت نام اقدام به
-                        فعالسازی حساب خود نمائید.
-                      </p>
-                      <p className="text-color">
-                        <PiWarningCircleLight className={"modal-icon"} />
-                        همکاران موبایل فروش و همکاران خدمات فنی کامپیوتر
-                        می‌توانند با ارسال عکس کارت ویزیت و جواز کسب فروشگاه به
-                        رایگان پنل طلایی دریافت کنند.
-                      </p>
-
-                      <Login />
-                    </div>
-                  ),
-                })
+                {
+                  setModalValue("login")
+                  setIsShowModal(true)
+                }
               }
             >
               <span>ورود کاربران</span>
-              <Image src={"/Assets/user-profile.png"} width={30} height={30} />
+              <Image src={"/Assets/user-profile.png"} width={30} height={30} alt="profile"/>
             </div>
           </div>
         </div>
