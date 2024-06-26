@@ -4,8 +4,10 @@ import style from "./Login.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Context } from "@/Context/Context";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Login({setValue}) {
+export default function Login({ setValue }) {
   const context = useContext(Context);
 
   const [typePassword, setTypePassword] = useState("password");
@@ -25,16 +27,26 @@ export default function Login({setValue}) {
   const loginHandler = (e) => {
     e.preventDefault();
     if (!userName.trim()) {
-      Swal.fire({
-        title: "نام کاربری خود را وارد کنید",
-        icon: "warning",
-        confirmButtonText: "باشه",
+      toast.error("نام کاربری خود را وارد کنید", {
+        position: "top-left",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
     } else if (!password.trim()) {
-      Swal.fire({
-        title: "رمز عبور  خود را وارد کنید",
-        icon: "warning",
-        confirmButtonText: "باشه",
+      toast.error("رمز عبور خود را وارد کنید", {
+        position: "top-left",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
     }
     fetch(`${context.api}/Account/signin`, {
@@ -47,26 +59,33 @@ export default function Login({setValue}) {
         password: password,
       }),
     }).then((res) => {
-      console.log(res.status);
       if (res.status === 200) {
         Swal.fire({
           title: "با موفقیت وارد اکانت خود شدید",
           icon: "success",
           confirmButtonText: "باشه",
         });
-      }
-      else if(res.status === 403){
-        Swal.fire({
-          title: "نام کاربری یا رمز عبور اشتباه است",
-          icon: "error",
-          confirmButtonText: "باشه",
+      } else if (res.status === 404) {
+        toast.error("نام کاربری یا رمز عبور اشتباه است", {
+          position: "top-left",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
         });
-      }
-      else if(res.status === 500){
-        Swal.fire({
-          title: "خطای سرور",
-          icon: "error",
-          confirmButtonText: "باشه",
+      } else if (res.status === 500) {
+        toast.error("مشکلی در سمت سرور به وجود آمده", {
+          position: "top-left",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
         });
       }
     });
@@ -143,9 +162,24 @@ export default function Login({setValue}) {
           آیا نام کاربری خود را فراموش کردید؟
         </span>
         <br />
-        <span className={style.link_span} onClick={()=> setValue("register")}>ثبت نام</span>
+        <span className={style.link_span} onClick={() => setValue("register")}>
+          ثبت نام
+        </span>
         <br />
       </form>
+
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }

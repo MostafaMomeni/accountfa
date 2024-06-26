@@ -1,0 +1,53 @@
+.parent{
+    min-width: 50%;
+    max-width: 100%;
+    background-color: var(--bg-menu);
+    width: fit-content;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.password_input_parent{
+    width: 30%;
+    margin: 10px;
+    display: inline-block;
+    
+}
+.password_input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateY(5px);
+}
+.eyes_icon{
+    width: 20%;
+    color: var(--text-color);
+    margin-left: 5px;
+}
+.input{
+    width: 30%;
+    margin: 10px;
+}
+.link_span{
+    color: var(--bg-icons);
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+}
+.datePicker{
+    background-color: inherit;
+    padding: 7px;
+    color: var(--text-color);
+    border: 1px solid var(--hover-color);
+    width: 30%;
+    margin: 10px;
+    border-radius: 5px;
+}

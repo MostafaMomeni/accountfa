@@ -45,6 +45,7 @@ body{
 .input-form-parent{
   position: relative;
   display: inline-block;
+  height: 100%;
 }
 .label-form{
   position: absolute;
@@ -71,7 +72,7 @@ body{
   padding: 15px;
 }
 .modal-body{
-  background-color: var(--bg-base);
+  background-color: var(--hover-color);
   min-width: 60%;
 }
 /* finish modal css */
