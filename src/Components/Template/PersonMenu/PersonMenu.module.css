@@ -139,3 +139,19 @@
         width: 15%;
     }
 }
+@media(max-widtH:800px){
+    .blank{
+        width: 50%;
+    }
+    .main{
+        width: 50%;
+    }
+}
+@media(max-widtH:450px){
+    .blank{
+        width: 30%;
+    }
+    .main{
+        width: 70%;
+    }
+}
