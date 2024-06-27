@@ -2,7 +2,9 @@
 import React , {createContext} from "react"
 
 const context = {
-    api: "https://accountfa-backend.liara.run/api"
+    api: "https://accountfa-backend.liara.run/api",
+    isLogin : false,
+    userInfo:[]
 }
 
 export const Context = createContext(context)

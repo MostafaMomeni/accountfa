@@ -2,11 +2,15 @@
   font-family: iranSans;
   src: url(../../fonts/IRANSans/IRANSans.ttf);
 }
+@font-face {
+  font-family: iranYekan;
+  src: url(../../fonts/iranyekan/IRANYekanBlack.ttf);
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: iranSans;
+  font-family: irenYekan;
 }
 :root{
   --bg-base:#293544;
@@ -17,6 +21,7 @@
   --bg-icons:#9b4bb6;
   --bg-header:#1c2938;
   --hover-icons:#6a2f7e;
+  --text-white: #ffffff ;
 }
 body{
   direction: rtl;

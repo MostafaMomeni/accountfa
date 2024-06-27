@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useContext } from "react";
 import style from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,10 +9,15 @@ import Register from "@/Components/Module/Forms/Register/Register";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import PhoneMenu from "../PhoneMenu/PhoneMenu";
+import { Context } from "@/Context/Context";
+import PersonMenu from "../PersonMenu/PersonMenu";
 
 export default function Header() {
+  const context = useContext(Context)
+
   const [width, setWidth] = useState(1000);
   const [isShowMenu, setIsShowMenu] = useState(false);
+  const [isShowPersonMenu, setIsShowPersonMenu] = useState(false);
 
   const [modalValue, setModalValue] = useState("");
   const [isShowModal, setIsShowModal] = useState(false);
@@ -26,6 +31,14 @@ export default function Header() {
     };
     window.addEventListener("resize", reSize);
   }, []);
+
+  useEffect(()=>{
+    if(document.cookie.split("=")[0] === "Authorization"){
+      context.isLogin = true
+    }else{
+      context.isLogin = false
+    }
+  },[])
 
   useEffect(() => {
     if (isShowModal) {
@@ -74,7 +87,7 @@ export default function Header() {
           <div className={style.right}>
             <Link href={"/"} className={style.logo}>
               <Image
-                src={width > 650 ? "/Assets/light-logo.png" : "/Assets/logoMb.png"}
+                src={width > 650 ? "/Assets/dark-logo.png" : "/Assets/logoMb.png"}
                 width={250}
                 height={50}
                 quality={100}
@@ -102,7 +115,7 @@ export default function Header() {
             )}
           </div>
           <div className={style.left}>
-            <label className={style.switch}>
+            {/* <label className={style.switch}>
               <span className={style.sun}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <g fill="#ffd43b">
@@ -118,15 +131,24 @@ export default function Header() {
               </span>
               <input type="checkbox" className={style.input} />
               <span className={style.slider}></span>
-            </label>
+            </label> */}
             <div
               className={style.login_parent}
               onClick={() => {
-                setModalValue("login");
-                setIsShowModal(true);
+                context.isLogin ? (
+                  <>
+                 {setIsShowPersonMenu(!isShowPersonMenu)}
+                 {setIsShowMenu(false)}
+                  </>
+                ) : (
+                  <>
+                  {setModalValue("login")}
+                  {setIsShowModal(true)}
+                  </>
+                )
               }}
             >
-              <span>ورود کاربران</span>
+              <span className={style.login_btn_text}>{context.isLogin ? "نام کاربر" : "ورود کاربر"}</span>
               <Image
                 src={"/Assets/user-profile.png"}
                 width={30}
@@ -138,6 +160,7 @@ export default function Header() {
         </div>
       </div>
       {width < 650 && isShowMenu && <PhoneMenu closeMenu={setIsShowMenu} />}
+      {context.isLogin && isShowPersonMenu && <PersonMenu closeMenu={setIsShowPersonMenu} />}
     </>
   );
 }

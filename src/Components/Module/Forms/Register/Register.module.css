@@ -25,6 +25,9 @@
     align-items: center;
     transform: translateY(5px);
 }
+.passwordInput{
+    width: 100%;
+}
 .eyes_icon{
     width: 20%;
     color: var(--text-color);
@@ -50,6 +53,9 @@
     width: 30%;
     margin: 10px;
     border-radius: 5px;
+}
+.birthday_input{
+    width: 100%;
 }
 @media(max-width:1165px){
  .password_input_parent , .input , .birthday_input{

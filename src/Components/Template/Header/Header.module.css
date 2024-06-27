@@ -236,3 +236,8 @@
         padding: 5px 15px;
     }
 }
+@media(max-width:400px){
+  .login_btn_text{
+    display: none;
+  }
+}
