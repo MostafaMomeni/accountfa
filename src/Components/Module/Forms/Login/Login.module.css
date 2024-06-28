@@ -4,6 +4,7 @@
     background-color: var(--bg-menu);
     width: fit-content;
     margin: auto;
+    margin-bottom: 15px;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.1);
@@ -19,6 +20,7 @@
 .eyes_icon{
     width: 10%;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 /* start chick box */
@@ -61,6 +63,7 @@
 .link_span{
     color: var(--bg-icons);
     font-size: 14px;
-    margin-top: 5px;
     cursor: pointer;
+    display: block;
+    line-height: 0.8;
 }

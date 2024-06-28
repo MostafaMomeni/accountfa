@@ -22,10 +22,10 @@ export default function Slider() {
         modules={[Navigation, Pagination, Mousewheel]}
         className="mySwiper"
       >
-        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} className={style.image}/></SwiperSlide>
-        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} className={style.image}/></SwiperSlide>
-        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} className={style.image}/></SwiperSlide>
-        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} className={style.image}/></SwiperSlide>
+        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} alt='slider image' className={style.image}/></SwiperSlide>
+        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} alt='slider image' className={style.image}/></SwiperSlide>
+        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} alt='slider image' className={style.image}/></SwiperSlide>
+        <SwiperSlide><Image src={"/Assets/slider-image.jpg"} width={1000} height={400} alt='slider image' className={style.image}/></SwiperSlide>
       </Swiper>
         </div>
     </>

@@ -25,6 +25,12 @@ export default function PersonMenu({ closeMenu }) {
     }, 200);
   };
 
+  const logoutHandler = () =>{
+    document.cookie = "Authorization=;expires=" + new Date(0).toUTCString()
+
+    document.location.reload()
+  }
+
   return (
     <>
       <div className={style.parent}>
@@ -37,9 +43,10 @@ export default function PersonMenu({ closeMenu }) {
               width={70}
               height={70}
               quality={100}
+              alt="profile"
               className={style.user_profile}
             />
-            <CiPower className={style.header_icon} />
+            <CiPower className={style.header_icon} onClick={()=> logoutHandler()}/>
           </div>
           <p className={style.user_name}>مصطفی تست</p>
           <div className={style.user_short_name_parent}>
@@ -89,6 +96,7 @@ export default function PersonMenu({ closeMenu }) {
               src={"/Assets/dark-logo.png"}
               width={150}
               height={30}
+              alt="logo"
             />
           </div>
         </div>

@@ -6,6 +6,7 @@ import { SlKey } from "react-icons/sl";
 import { MdOutlineCardGiftcard } from "react-icons/md";
 import { FaUnlock } from "react-icons/fa6";
 import { FaCloud } from "react-icons/fa";
+import AppleIDWithIcloud from "@/Components/Template/Modals/AppleIDWithIcloud/AppleIDWithIcloud";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <p>انواع محصولات دیجیتال کد</p>
       </div>
       <div className={styles.card_parent}>
-        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
+        <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155" showModal={AppleIDWithIcloud}/>
         <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="فوری" text="(با آیکلود)" color1="#c80046" color2="#e14155"/>
         <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="پلاس" color1="#1e9ea4 " color2="#30d7e0 "/>
         <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="حقیقی" color1="#f38c00" color2="#e9b964 "/>

@@ -4,6 +4,7 @@
     background-color: var(--bg-menu);
     width: fit-content;
     margin: auto;
+    margin-bottom: 15px;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.1);
@@ -32,6 +33,7 @@
     width: 20%;
     color: var(--text-color);
     margin-left: 5px;
+    cursor: pointer;
 }
 .input{
     width: 30%;

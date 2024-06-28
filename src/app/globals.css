@@ -35,7 +35,7 @@ body{
 .input-form{
   background-color: inherit;
   border: 1px solid var(--hover-color);
-  padding: 7px;
+  padding: 9px;
   border-radius: 5px;
   margin: 10px 0;
   color: var(--text-color);
@@ -55,26 +55,24 @@ body{
 .label-form{
   position: absolute;
   color: var(--text-color);
-  top: 13px;
+  top: 20px;
   right: 10px;
   transition: 0.2s;
   padding: 0;
 }
 .input-form-parent:has( .input-form:focus) .label-form , .input-form-parent:has(.input-form:valid) .label-form {
-  top: -8px;
-  background-color: var(--bg-menu);
+  top: -1px;
+}
+@media(max-width:500px){
+  .label-form{
+    font-size: 12px;
+  }
 }
 
 /* start modal css */
 .modal-icon{
   font-size: 18px;
   margin-left: 5px;
-}
-.modal-title{
-  background-image: linear-gradient(to right,#452350 0,#8d46a5 100%);
-  color: var(--text-color);
-  text-align: right;
-  padding: 15px;
 }
 .modal-body{
   background-color: var(--hover-color);

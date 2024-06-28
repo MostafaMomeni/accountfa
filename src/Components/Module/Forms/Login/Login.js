@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Context } from "@/Context/Context";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login({ setValue }) {
   const context = useContext(Context);
@@ -65,8 +65,12 @@ export default function Login({ setValue }) {
           icon: "success",
           confirmButtonText: "باشه",
         });
-        context.isLogin = true
-    document.cookie = "Authorization =" + "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im1vc3RhZmFAZ21haWwuY29tIiwibmJmIjoxNzE5NDY4ODUxLCJleHAiOjE3MTk0Njg5MTEsImlhdCI6MTcxOTQ2ODg1MSwiaXNzIjoiWW91cklzc3VlciIsImF1ZCI6IllvdXJBdWRpZW5jZSJ9.YAawSLueGS88dqj4DXpSedkbVSbnhxIDf0_TU1hksW8"  + "2024-06-28T06:12:18.411Z" + "; path=/";
+        context.isLogin = true;
+        document.cookie =
+          "Authorization =" +
+          "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im1vc3RhZmFAZ21haWwuY29tIiwibmJmIjoxNzE5NDY4ODUxLCJleHAiOjE3MTk0Njg5MTEsImlhdCI6MTcxOTQ2ODg1MSwiaXNzIjoiWW91cklzc3VlciIsImF1ZCI6IllvdXJBdWRpZW5jZSJ9.YAawSLueGS88dqj4DXpSedkbVSbnhxIDf0_TU1hksW8" +
+          "2024-06-28T06:12:18.411Z" +
+          "; path=/";
       } else if (res.status === 404) {
         toast.error("نام کاربری یا رمز عبور اشتباه است", {
           position: "top-left",
@@ -156,7 +160,7 @@ export default function Login({ setValue }) {
           ورود به حساب کاربری
         </button>
         <br />
-        <span className={style.link_span}>
+        <span className={style.link_span}  onClick={() => setValue("forgetPassword")}>
           آیا رمز عبور خود را فراموش کردید؟
         </span>
         <br />
