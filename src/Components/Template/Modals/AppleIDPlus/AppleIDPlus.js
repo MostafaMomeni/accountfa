@@ -1,45 +1,47 @@
 "use client"
-import React, { useState } from 'react'
-import style from "./AppleIDWithIcloud.module.css"
+import React , {useState} from "react";
+import style from "./AppleIDPlus.module.css"
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { PiWarningCircleLight } from "react-icons/pi";
 import { IoIosWarning } from "react-icons/io";
 
-
-export default function AppleIDWithIcloud() {
+export default function AppleIDPlus() {
   const MySwal = withReactContent(Swal);
 
   return (
-   <>
-   <div>
-   { MySwal.fire({
-        title: `اپل آیدی فوری (با آیکلود)`,
-        showCloseButton: true,
-        showConfirmButton: false,
-        customClass: {
-          title: style.modal_title,
-          popup: style.modal_body,
-        },
-        html: (
-          <div style={{textAlign:"right"}}>
-            <p className="text-color" style={{ fontSize: "16px" }}>
-              <IoIosWarning className={"modal-icon"} />
-              این مدل اپل‌آیدی به صورت پیش ساخته است، و قابلیت شخصی‌سازی را دارا می‌باشد.
-            </p>
-            <p className="text-color" style={{ fontSize: "16px" }}>
-              <PiWarningCircleLight className={"modal-icon"} />
-              برای دریافت این محصول باید شماره تماس خود را وارد کنید تا این محصول به صورت فوری برای شما از طریق پیام کوتاه ارسال شود.
-            </p>
+    <>
+      <div>
+        {MySwal.fire({
+          title: `اپل آیدی پلاس`,
+          showCloseButton: true,
+          showConfirmButton: false,
+          customClass: {
+            title: style.modal_title,
+            popup: style.modal_body,
+          },
+          html: (
+            <div style={{ textAlign: "right" }}>
+              <p className="text-color" style={{ fontSize: "16px" }}>
+                <IoIosWarning className={"modal-icon"} />
+                این مدل اپل‌آیدی به صورت پیش ساخته است، و قابلیت شخصی‌سازی را
+                دارا می‌باشد.
+              </p>
+              <p className="text-color" style={{ fontSize: "16px" }}>
+                <PiWarningCircleLight className={"modal-icon"} />
+                برای دریافت این محصول باید شماره تماس خود را وارد کنید تا این
+                محصول به صورت فوری برای شما از طریق پیام کوتاه ارسال شود.
+              </p>
 
-            {<Form/>}
-          </div>
-        ),
-      })}
-   </div>
-   </>
-  )
+              {<Form />}
+            </div>
+          ),
+        })}
+      </div>
+    </>
+  );
 }
+
 
 export function Form (){
 

@@ -1,0 +1,15 @@
+.modal_title {
+    background-image: linear-gradient(to right, #00796b 0, #4db6ac 100%);
+    color: var(--text-color);
+    text-align: right;
+    padding: 15px;
+  }
+  .modal_body {
+    background-color: var(--bg-base);
+    min-width: 60%;
+  }
+  .parent {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }

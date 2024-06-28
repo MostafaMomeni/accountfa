@@ -1,20 +1,20 @@
 "use client"
 import React, { useState } from 'react'
-import style from "./AppleIDWithIcloud.module.css"
+import style from "../AppleIDWithIcloud/AppleIDWithIcloud.module.css"
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { PiWarningCircleLight } from "react-icons/pi";
 import { IoIosWarning } from "react-icons/io";
 
 
-export default function AppleIDWithIcloud() {
+export default function AppleIDWithoutIcloud() {
   const MySwal = withReactContent(Swal);
 
   return (
    <>
    <div>
    { MySwal.fire({
-        title: `اپل آیدی فوری (با آیکلود)`,
+        title: `اپل آیدی فوری (بدون آیکلود)`,
         showCloseButton: true,
         showConfirmButton: false,
         customClass: {
