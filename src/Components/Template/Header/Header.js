@@ -34,8 +34,8 @@ export default function Header() {
   }, []);
 
   useEffect(()=>{
-    // fetch(`${context.api}/Account/get_info`)
-    // .then(res => console.log(res))
+    fetch(`${context.api}/Account/get_info`)
+    .then(res => console.log(res))
     if(document.cookie.split("=")[0] === "Authorization"){
       context.isLogin = true
     }else{

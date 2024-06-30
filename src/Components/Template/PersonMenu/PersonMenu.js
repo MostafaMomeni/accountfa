@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import style from "./PersonMenu.module.css";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiPower } from "react-icons/ci";
@@ -7,8 +7,10 @@ import { FaStar, FaRegStar, FaDollarSign } from "react-icons/fa";
 import Image from "next/image";
 import Stack from "@mui/material/Stack";
 import { PieChart } from "@mui/x-charts/PieChart";
+import { Context } from "@/Context/Context";
 
 export default function PersonMenu({ closeMenu }) {
+  const context = useContext(Context)
   const data = [
     { label: "Group A", value: 400 },
     { label: "Group B", value: 300 },
@@ -19,6 +21,8 @@ export default function PersonMenu({ closeMenu }) {
   const [closeAnimation, setCloseAnimation] = useState(false);
 
   const closeMenuHandler = () => {
+    // fetch(`${context.api}/Account/get_info`)
+    // .then(res => console.log(res))
     setCloseAnimation(true);
     setTimeout(() => {
       closeMenu(false);

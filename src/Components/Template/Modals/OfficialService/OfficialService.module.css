@@ -1,0 +1,67 @@
+.modal_title {
+  background-image: linear-gradient(to right, #9500ab 0, #9b4db6 100%);
+  color: var(--text-color);
+  text-align: right;
+  padding: 15px;
+}
+.modal_body {
+  background-color: var(--bg-base);
+  min-width: 70%;
+}
+.form_parent {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.inputs {
+  width: 30%;
+}
+.selectBox_parent {
+  width: 65%;
+  display: inline-block;
+  margin: 10px;
+}
+.selectBox {
+  background-color: var(--bg-base);
+  padding: 9px;
+  border: 1px solid var(--hover-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  outline: none;
+  width: 100%;
+}
+.Item_box_parent {
+  width: 100%;
+}
+.item_box {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid var(--text-color);
+  padding: 20px;
+  color: var(--text-white);
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
+.text_item_box {
+  margin: 15px;
+}
+.price_item_box {
+  margin: 15px;
+  color: yellow;
+}
+@media (max-width: 950px) {
+  .inputs,
+  .imei_parent {
+    width: 100%;
+  }
+  .selectBox_parent {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 500px) {
+  .selectBox {
+    font-size: 12px;
+  }
+}

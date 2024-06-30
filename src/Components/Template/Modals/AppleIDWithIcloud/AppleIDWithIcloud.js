@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { PiWarningCircleLight } from "react-icons/pi";
 import { IoIosWarning } from "react-icons/io";
+import { calculateImeiCheckDigit } from '@/Components/Module/FinderImei/FinderImei';
 
 
 export default function AppleIDWithIcloud() {
@@ -45,7 +46,7 @@ export function Form (){
 
     const [phone , setPhone] = useState("")
     const [imei , setImei] = useState("")
-    const [text , setText] = useState("")
+    const [resultImei , setResultImei] = useState("")
 
     return(
         <>
@@ -68,9 +69,8 @@ export function Form (){
         <div className={`input-form-parent ${style.small_input}`}>
           <input
             type="text"
-            id="phone-input"
             className="input-form"
-            value={text}
+            value={resultImei}
             disabled
             required
           />
@@ -79,13 +79,16 @@ export function Form (){
         <div className={`input-form-parent ${style.big_input}`}>
           <input
             type="text"
-            id="phone-input"
+            id="imei-input"
             className="input-form"
             value={imei}
-            onChange={(e) => setImei(e.target.value)}
+            onChange={(e) => {
+              setImei(e.target.value)
+              setResultImei(calculateImeiCheckDigit(e.target.value))
+            }}
             required
           />
-          <label className="label-form" htmlFor="phone-input">
+          <label className="label-form" htmlFor="imei-input">
             IMEI(اختیاری)
           </label>
         </div>

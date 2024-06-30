@@ -1,0 +1,133 @@
+.modal_title {
+  background-image: linear-gradient(to right, #f38c00 0, #e9b964 100%);
+  color: var(--text-color);
+  text-align: right;
+  padding: 15px;
+}
+.modal_body {
+  background-color: var(--bg-base);
+  min-width: 80%;
+}
+.parent {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.imei_parent {
+  display: inline-block;
+  width: 25%;
+}
+.small_input {
+  width: 15%;
+}
+.big_input {
+  width: 82%;
+}
+.bottom_parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.green_btn {
+  color: #00c851;
+  background-color: inherit;
+  border: 1px solid #00c851;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  transition: 0.2s;
+}
+.yellow_btn {
+  color: #fdb901;
+  background-color: inherit;
+  border: 1px solid #fdb901;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  transition: 0.2s;
+}
+.green_btn:hover {
+  color: white;
+  background-color: #00c851;
+}
+.yellow_btn:hover {
+  color: white;
+  background-color: #fdb901;
+}
+.text_bottom {
+  color: var(--text-white);
+  font-size: 20px;
+}
+.inputs {
+  width: 25%;
+}
+.selectBox_parent {
+  width: 47%;
+  display: inline-block;
+  margin: 10px;
+}
+.selectBox {
+  background-color: var(--bg-base);
+  padding: 9px;
+  border: 1px solid var(--hover-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  outline: none;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.birthday_input{
+    width: 100%;
+}
+@media (max-width: 1200px) {
+  .modal_body {
+    min-width: 90%;
+  }
+}
+@media (max-width: 950px) {
+  .inputs , .imei_parent {
+    width: 100%;
+  }
+  .selectBox_parent {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .selectBox {
+    padding: 12px;
+  }
+}
+@media (max-width: 780px) {
+  .bottom_parent {
+    display: block;
+    text-align: center;
+  }
+  .green_btn,
+  .yellow_btn {
+    margin-top: 15px;
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .selectBox {
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .green_btn,
+  .yellow_btn {
+    margin-top: 15px;
+    width: 90%;
+    font-size: 14px;
+  }
+  .small_input {
+    width: 14%;
+  }
+  .big_input {
+    width: 84%;
+  }
+  .modal_title {
+    font-size: 20px;
+  }
+}

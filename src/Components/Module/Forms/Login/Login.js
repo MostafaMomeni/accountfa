@@ -53,6 +53,7 @@ export default function Login({ setValue }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im11c3RhZmFtb21lbmkxMzU5QGdtYWlsLmNvbSIsIm5iZiI6MTcxOTc2OTc1MCwiZXhwIjoxNzE5ODU2MTUwLCJpYXQiOjE3MTk3Njk3NTAsImlzcyI6IllvdXJJc3N1ZXIiLCJhdWQiOiJZb3VyQXVkaWVuY2UifQ.MkzeB3iQw0ltekMztREq3yU3_-QI_B-t4cUIrqrBB1o"
       },
       body: JSON.stringify({
         username: userName,
@@ -68,7 +69,7 @@ export default function Login({ setValue }) {
         context.isLogin = true;
         document.cookie =
           "Authorization =" +
-          "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im1vc3RhZmFAZ21haWwuY29tIiwibmJmIjoxNzE5NDY4ODUxLCJleHAiOjE3MTk0Njg5MTEsImlhdCI6MTcxOTQ2ODg1MSwiaXNzIjoiWW91cklzc3VlciIsImF1ZCI6IllvdXJBdWRpZW5jZSJ9.YAawSLueGS88dqj4DXpSedkbVSbnhxIDf0_TU1hksW8" +
+          "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im11c3RhZmFtb21lbmkxMzU5QGdtYWlsLmNvbSIsIm5iZiI6MTcxOTc2OTc1MCwiZXhwIjoxNzE5ODU2MTUwLCJpYXQiOjE3MTk3Njk3NTAsImlzcyI6IllvdXJJc3N1ZXIiLCJhdWQiOiJZb3VyQXVkaWVuY2UifQ.MkzeB3iQw0ltekMztREq3yU3_-QI_B-t4cUIrqrBB1o" +
           "2024-06-28T06:12:18.411Z" +
           "; path=/";
       } else if (res.status === 404) {

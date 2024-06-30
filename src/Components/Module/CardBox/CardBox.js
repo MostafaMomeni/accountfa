@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import style from "./CardBox.module.css";
 import { Context } from "@/Context/Context";
 import Swal from "sweetalert2";
@@ -8,11 +8,12 @@ import withReactContent from "sweetalert2-react-content";
 export default function CardBox(props) {
   const context = useContext(Context);
   const MySwal = withReactContent(Swal);
+  const [isShowModal, setIsShowModal] = useState(false);
 
   const validateIsLogin = () => {
     if (document.cookie.split("=")[0] === "Authorization") {
       context.isLogin = true;
-      props.showModal();
+      props.showModal()
     } else {
       context.isLogin = false;
       errorModal();

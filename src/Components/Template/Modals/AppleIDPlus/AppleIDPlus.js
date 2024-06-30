@@ -1,10 +1,11 @@
-"use client"
-import React , {useState} from "react";
-import style from "./AppleIDPlus.module.css"
+"use client";
+import React, { useState } from "react";
+import style from "./AppleIDPlus.module.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { PiWarningCircleLight } from "react-icons/pi";
 import { IoIosWarning } from "react-icons/io";
+import { calculateImeiCheckDigit } from "@/Components/Module/FinderImei/FinderImei";
 
 export default function AppleIDPlus() {
   const MySwal = withReactContent(Swal);
@@ -24,8 +25,12 @@ export default function AppleIDPlus() {
             <div style={{ textAlign: "right" }}>
               <p className="text-color" style={{ fontSize: "16px" }}>
                 <IoIosWarning className={"modal-icon"} />
-                این مدل اپل‌آیدی به صورت پیش ساخته است، و قابلیت شخصی‌سازی را
-                دارا می‌باشد.
+                این مدل اپل‌آیدی به صورت پیش ساخته است، و قابلیت شخصی‌سازی
+                اجباری را در اولین اتصال دارا می‌باشد.
+              </p>
+              <p className="text-color" style={{ fontSize: "16px" }}>
+                <IoIosWarning className={"modal-icon"} />
+                فعال‌سازی این مدل نیاز به یک ایمیل شخصی فعال دارد.
               </p>
               <p className="text-color" style={{ fontSize: "16px" }}>
                 <PiWarningCircleLight className={"modal-icon"} />
@@ -42,16 +47,14 @@ export default function AppleIDPlus() {
   );
 }
 
+export function Form() {
+  const [phone, setPhone] = useState("");
+  const [imei, setImei] = useState("");
+  const [resultImei, setResultImei] = useState("");
 
-export function Form (){
-
-    const [phone , setPhone] = useState("")
-    const [imei , setImei] = useState("")
-    const [text , setText] = useState("")
-
-    return(
-        <>
-        <form className={style.parent}>
+  return (
+    <>
+      <form className={style.parent}>
         <div className="input-form-parent w-100">
           <input
             type="text"
@@ -66,41 +69,43 @@ export function Form (){
           </label>
         </div>
 
-        <div style={{display:"flex", justifyContent:"space-between"}}>
-        <div className={`input-form-parent ${style.small_input}`}>
-          <input
-            type="text"
-            id="phone-input"
-            className="input-form"
-            value={text}
-            disabled
-            required
-          />
-        </div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div className={`input-form-parent ${style.small_input}`}>
+            <input
+              type="text"
+              className="input-form"
+              value={resultImei}
+              disabled
+              required
+            />
+          </div>
 
-        <div className={`input-form-parent ${style.big_input}`}>
-          <input
-            type="text"
-            id="phone-input"
-            className="input-form"
-            value={imei}
-            onChange={(e) => setImei(e.target.value)}
-            required
-          />
-          <label className="label-form" htmlFor="phone-input">
-            IMEI(اختیاری)
-          </label>
-        </div>
+          <div className={`input-form-parent ${style.big_input}`}>
+            <input
+              type="text"
+              id="imei-input"
+              className="input-form"
+              value={imei}
+              onChange={(e) => {
+                setImei(e.target.value);
+                setResultImei(calculateImeiCheckDigit(e.target.value));
+              }}
+              required
+            />
+            <label className="label-form" htmlFor="imei-input">
+              IMEI(اختیاری)
+            </label>
+          </div>
         </div>
 
         <div className={style.bottom_parent}>
-            <p className={style.text_bottom}>عدم موجودی</p>
-            <div>
-                <button className={style.green_btn}>خرید از کیف پول اصلی</button>
-                <button className={style.yellow_btn}>خرید مستقیم از درگاه</button>
-            </div>
+          <p className={style.text_bottom}>عدم موجودی</p>
+          <div>
+            <button className={style.green_btn}>خرید از کیف پول اصلی</button>
+            <button className={style.yellow_btn}>خرید مستقیم از درگاه</button>
+          </div>
         </div>
-        </form>
-        </>
-    )
+      </form>
+    </>
+  );
 }

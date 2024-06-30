@@ -83,4 +83,7 @@
     .big_input{
         width: 84%;
     }
+    .modal_title{
+      font-size: 20px;
+    }
 }
