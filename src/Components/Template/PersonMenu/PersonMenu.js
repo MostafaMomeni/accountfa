@@ -21,7 +21,7 @@ export default function PersonMenu({ closeMenu }) {
   const [closeAnimation, setCloseAnimation] = useState(false);
 
   const closeMenuHandler = () => {
-    fetch(`${context.api}/Account/get_info`)
+    fetch(`${context.api}/Account/get_info`,{credentials:"include"})
     .then(res => console.log(res))
     setCloseAnimation(true);
     setTimeout(() => {

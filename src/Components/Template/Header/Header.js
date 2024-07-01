@@ -34,7 +34,7 @@ export default function Header() {
   }, []);
 
   useEffect(()=>{
-    fetch(`${context.api}/Account/get_info`)
+    fetch(`${context.api}/Account/get_info`,{credentials:"include"})
     .then(res => console.log(res))
     if(document.cookie.split("=")[0] === "jwt"){
       context.isLogin = true
