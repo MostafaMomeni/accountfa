@@ -68,9 +68,9 @@ export default function Login({ setValue }) {
         });
         context.isLogin = true;
         document.cookie =
-          "Authorization =" +
-          "Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im11c3RhZmFtb21lbmkxMzU5QGdtYWlsLmNvbSIsIm5iZiI6MTcxOTc2OTc1MCwiZXhwIjoxNzE5ODU2MTUwLCJpYXQiOjE3MTk3Njk3NTAsImlzcyI6IllvdXJJc3N1ZXIiLCJhdWQiOiJZb3VyQXVkaWVuY2UifQ.MkzeB3iQw0ltekMztREq3yU3_-QI_B-t4cUIrqrBB1o" +
-          "2024-06-28T06:12:18.411Z" +
+          "jwt =" +
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vc3RhZmEiLCJFbWFpbCI6Im11c3RhZmFtb21lbmkxMzU5QGdtYWlsLmNvbSIsIm5iZiI6MTcxOTg1OTUwNCwiZXhwIjoxNzE5OTQ1OTA0LCJpYXQiOjE3MTk4NTk1MDQsImlzcyI6IllvdXJJc3N1ZXIiLCJhdWQiOiJZb3VyQXVkaWVuY2UifQ.LvDa8gn4q2yeNZTlveYLc0BnPNUTSIhW5VK7DdtopQw" +
+          "2025-06-28T06:12:18.411Z" +
           "; path=/";
       } else if (res.status === 404) {
         toast.error("نام کاربری یا رمز عبور اشتباه است", {

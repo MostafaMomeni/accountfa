@@ -36,7 +36,7 @@ export default function Header() {
   useEffect(()=>{
     fetch(`${context.api}/Account/get_info`)
     .then(res => console.log(res))
-    if(document.cookie.split("=")[0] === "Authorization"){
+    if(document.cookie.split("=")[0] === "jwt"){
       context.isLogin = true
     }else{
       context.isLogin = false

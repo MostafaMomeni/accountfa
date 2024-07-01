@@ -13,6 +13,7 @@ import AppleIDWithoutIcloud from "@/Components/Template/Modals/AppleIDWithoutIcl
 import license from "@/Components/Template/Modals/License/License";
 import RealAppleID from "@/Components/Template/Modals/RealAppleID/RealAppleID";
 import OfficialService from "@/Components/Template/Modals/OfficialService/OfficialService";
+import HomeChart from "@/Components/Template/Charts/HomeChart/HomeChart";
 
 export default function Home() {
   return (
@@ -32,6 +33,13 @@ export default function Home() {
         <CardBox icon={<MdOutlineCardGiftcard/>} boldTitle="گیفت" nextBoldTitle="کد" color1="#f80759 " color2="#f46ba5 "/>
         <CardBox icon={<FaUnlock/>} title="آنلاک اپل آیدی" boldTitle="کارتی"  color1="#9b4bb6" color2="#5971fe"/>
         <CardBox icon={<FaCloud/>} boldTitle="سرویس" nextBoldTitle="رسمی" color1="#9500ab" color2="#9b4db6 " showModal={OfficialService}/>
+      </div>
+
+      <div className={styles.title_chart}>
+        <h4>نمودار گردش حساب پنل</h4>
+      </div>
+      <div className={styles.chart_parent}>
+        <HomeChart/>
       </div>
     </div>
     </>

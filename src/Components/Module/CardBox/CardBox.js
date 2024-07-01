@@ -11,11 +11,9 @@ export default function CardBox(props) {
   const [isShowModal, setIsShowModal] = useState(false);
 
   const validateIsLogin = () => {
-    if (document.cookie.split("=")[0] === "Authorization") {
-      context.isLogin = true;
+    if (context.isLogin) {
       props.showModal()
     } else {
-      context.isLogin = false;
       errorModal();
     }
   };
