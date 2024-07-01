@@ -4,6 +4,8 @@ import style from "./OfficialService.module.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { PiWarningCircleLight } from "react-icons/pi";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import { calculateImeiCheckDigit } from "@/Components/Module/FinderImei/FinderImei";
 
 export default function OfficialService() {
   const MySwal = withReactContent(Swal);
@@ -31,8 +33,8 @@ function Body() {
 
   return (
     <>
-      {modalValue === "form" && <Form changeValue={setModalValue}/>}
-      {modalValue === "item" && <Item changeValue={setModalValue}/>}
+      {modalValue === "form" && <Form changeValue={setModalValue} />}
+      {modalValue === "item" && <Item changeValue={setModalValue} />}
     </>
   );
 }
@@ -88,7 +90,7 @@ function Form(props) {
       <div className={style.Item_box_parent}>
         <div
           className={style.item_box}
-          onClick={(e) => (props.changeValue("item"))}
+          onClick={(e) => props.changeValue("item")}
         >
           <h5 className={style.title_item_box}>سرویس نات اکتیو (NotActive)</h5>
           <p className={style.text_item_box}>مخصوص دستگاه آیفون</p>
@@ -100,11 +102,70 @@ function Form(props) {
   );
 }
 
-function Item(props){
+function Item(props) {
+    const [imei, setImei] = useState();
+    const [resultImei, setResultImei] = useState();
+  return (
+    <>
+      <div className={style.item_parent}>
+        <div className={style.back_btn_item}>
+          <p onClick={() => props.changeValue("form")}>
+            <IoArrowForwardCircleOutline /> بازگشت به صفحه قبل
+          </p>
+        </div>
+        <div className={style.service_info}>
+          <h4 className={style.title_service_info}>
+            سرویس انتخاب شده شما به شرح زیر می باشد
+          </h4>
+          <p className={style.text_service_info}>
+            سرویس نات اکتیو (NotActive) / مخصوص دستگاه آیفون
+          </p>
+          <p className={`mt-5 ${style.text_service_info}`}>
+            هزینه : 119,000 تومان
+          </p>
+          <p className={style.text_service_info}>مدت زمان : 1 تا 3 روزکاری</p>
+        </div>
+        <div className={style.borderBox_item}>
+          <h4>مثال توضیحات سرویس در حالت انجام شده :</h4>
+        </div>
 
-    return(
-        <>
-        <h1>item</h1>
-        </>
-    )
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop:"25px" }}>
+          <div className={`input-form-parent ${style.small_input}`}>
+            <input
+              type="text"
+              className="input-form"
+              value={resultImei}
+              disabled
+              required
+            />
+          </div>
+
+          <div className={`input-form-parent ${style.big_input}`}>
+            <input
+              type="text"
+              id="imei-input"
+              className="input-form"
+              value={imei}
+              onChange={(e) => {
+                setImei(e.target.value);
+                setResultImei(calculateImeiCheckDigit(e.target.value));
+              }}
+              required
+            />
+            <label className="label-form" htmlFor="imei-input">
+              IMEI
+            </label>
+          </div>
+        </div>
+
+        <div className={style.bottom_parent}>
+          <p className={style.text_bottom}>موجودی فعلی کیف پول شما: 89000 تومان</p>
+          <div>
+            <button className={style.green_btn}>خرید از کیف پول اصلی</button>
+            <button className={style.yellow_btn}>خرید مستقیم از درگاه</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

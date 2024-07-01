@@ -16,6 +16,9 @@
 .small_input{
     width: 9%;
 }
+.small_input>input{
+  text-align: center;
+}
 .big_input{
     width: 88%;
 }
