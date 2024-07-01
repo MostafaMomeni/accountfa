@@ -14,8 +14,22 @@ import license from "@/Components/Template/Modals/License/License";
 import RealAppleID from "@/Components/Template/Modals/RealAppleID/RealAppleID";
 import OfficialService from "@/Components/Template/Modals/OfficialService/OfficialService";
 import HomeChart from "@/Components/Template/Charts/HomeChart/HomeChart";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "@/Context/Context";
+import GiftCode from "@/Components/Template/Modals/GiftCode/GiftCode";
 
 export default function Home() {
+
+  const context = useContext(Context)
+
+  const [isShowChart , setIsShowChart] = useState(false)
+
+  useEffect(()=>{
+    if(context.isLogin){
+      setIsShowChart(true)
+    }
+  },[context.isLogin])
+
   return (
     <>
     <div className={styles.parent}>
@@ -30,17 +44,20 @@ export default function Home() {
         <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="پلاس" color1="#1e9ea4 " color2="#30d7e0" showModal={AppleIDPlus}/>
         <CardBox icon={<FaApple/>} title="اپل‌آیدی" boldTitle="حقیقی" color1="#f38c00" color2="#e9b964 " showModal={RealAppleID}/>
         <CardBox icon={<SlKey/>} boldTitle="لایسنس" color1="#00796b " color2="#4db6ac" showModal={license}/>
-        <CardBox icon={<MdOutlineCardGiftcard/>} boldTitle="گیفت" nextBoldTitle="کد" color1="#f80759 " color2="#f46ba5 "/>
+        <CardBox icon={<MdOutlineCardGiftcard/>} boldTitle="گیفت" nextBoldTitle="کد" color1="#f80759 " color2="#f46ba5" showModal={GiftCode}/>
         <CardBox icon={<FaUnlock/>} title="آنلاک اپل آیدی" boldTitle="کارتی"  color1="#9b4bb6" color2="#5971fe"/>
         <CardBox icon={<FaCloud/>} boldTitle="سرویس" nextBoldTitle="رسمی" color1="#9500ab" color2="#9b4db6 " showModal={OfficialService}/>
       </div>
-
+      {isShowChart && (
+        <>
       <div className={styles.title_chart}>
         <h4>نمودار گردش حساب پنل</h4>
       </div>
       <div className={styles.chart_parent}>
         <HomeChart/>
-      </div>
+      </div> 
+        </>
+      ) }
     </div>
     </>
   );

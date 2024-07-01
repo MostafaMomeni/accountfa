@@ -1,0 +1,66 @@
+.modal_title {
+  background-image: linear-gradient(to right, #f80759 0, #f46ba5 100%);
+  color: var(--text-color);
+  text-align: right;
+  padding: 15px;
+}
+.modal_body {
+  background-color: var(--bg-base);
+  min-width: 70%;
+}
+.item_parent {
+  color: var(--text-color);
+}
+.back_btn_item {
+  color: var(--text-white);
+  display: flex;
+  justify-content: start;
+  margin-top: 40px;
+}
+.back_btn_item > p {
+  cursor: pointer;
+}
+.service_info {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px dashed var(--hover-color);
+  padding: 15px;
+  margin-top: 15px;
+  text-align: right;
+}
+.title_service_info {
+  font-size: 29px;
+  border-bottom: 2px solid var(--hover-color);
+  padding-bottom: 10px;
+}
+.text_service_info {
+  margin: 5px;
+  font-size: 20px;
+}
+.borderBox_item {
+  border: 2px solid var(--hover-color);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: right;
+  margin-top: 20px;
+}
+.box_parent{
+    display: flex;
+}
+.box{
+    margin-left: 50px;
+    cursor: pointer;
+    color: var(--text-white);
+    text-align: center;
+}
+@media (max-width: 1100px) {
+  .bottom_parent {
+    display: block;
+    text-align: center;
+  }
+  .green_btn,
+  .yellow_btn {
+    margin-top: 15px;
+    width: 70%;
+  }
+}

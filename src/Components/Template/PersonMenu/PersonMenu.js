@@ -30,7 +30,7 @@ export default function PersonMenu({ closeMenu }) {
   };
 
   const logoutHandler = () =>{
-    document.cookie = "Authorization=;expires=" + new Date(0).toUTCString()
+    document.cookie = "jwt=;expires=" + new Date(0).toUTCString()
 
     document.location.reload()
   }
