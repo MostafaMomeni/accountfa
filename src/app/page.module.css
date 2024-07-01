@@ -48,6 +48,9 @@
     .parent{
         width: 95%;
     }
+    .chart_parent{
+        height: 300px;
+    }
 }
 @media(max-width:650px){
     .parent{
