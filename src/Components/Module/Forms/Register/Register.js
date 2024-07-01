@@ -65,6 +65,7 @@ export default function Register({ setValue }) {
     }
     fetch(`${context.api}/Account/signup`, {
       method: "POST",
+      credentials : "include",
       headers: {
         "Content-Type": "application/json",
       },
